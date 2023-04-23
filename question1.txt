@@ -1,0 +1,20 @@
+This is a simple list component built using React. It consists of two components - SingleListItem and ListComponent.
+
+The SingleListItem component is a functional component that takes in four props:
+
+1. index: a number representing the index of the item in the list
+2. isSelected: a boolean indicating whether the item is selected or not
+3. onClickHandler: a function to be called when the item is clicked
+4. text: the text to be displayed for the item
+It renders an li element with a background color that depends on the value of isSelected prop. It also attaches an onClick event handler to the li element which calls the onClickHandler function with the index as a parameter.
+
+The ListComponent is also a functional component that takes in one prop:
+
+items: an array of objects representing the items to be displayed in the list. Each object should have a text property that represents the text to be displayed for that item.
+It initializes a state selectedIndex using the useState hook. It also uses the useEffect hook to reset the selectedIndex state to null whenever the items prop changes.
+
+It defines a handleClick function that takes an index parameter and updates the selectedIndex state to that value.
+
+It then maps over the items array and renders a SingleListItem component for each item. It passes the text, index, isSelected, and onClickHandler props to the SingleListItem component.
+
+Finally, the ListComponent is exported as the default export of the module. It is also wrapped in the memo function which ensures that it only re-renders when its props have changed.
